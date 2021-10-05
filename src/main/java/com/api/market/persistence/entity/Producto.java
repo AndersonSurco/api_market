@@ -24,17 +24,17 @@ public class Producto {
     private Double precioVenta;
 
     @Column(name = "cantidad_stock")
-    private int cantidadStrock;
+    private int cantidadStock;
 
     private Boolean estado;
-
-    public Integer getIdProducto() {
-        return idProducto;
-    }
 
     @ManyToOne
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Categoria categoria;
+
+    public Integer getIdProducto() {
+        return idProducto;
+    }
 
     public void setIdProducto(Integer idProducto) {
         this.idProducto = idProducto;
@@ -72,12 +72,12 @@ public class Producto {
         this.precioVenta = precioVenta;
     }
 
-    public int getCantidadStrock() {
-        return cantidadStrock;
+    public int getCantidadStock() {
+        return cantidadStock;
     }
 
-    public void setCantidadStrock(int cantidadStrock) {
-        this.cantidadStrock = cantidadStrock;
+    public void setCantidadStock(int cantidadStrock) {
+        this.cantidadStock = cantidadStrock;
     }
 
     public Boolean getEstado() {
@@ -86,5 +86,13 @@ public class Producto {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }
